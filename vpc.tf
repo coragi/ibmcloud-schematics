@@ -49,21 +49,6 @@ data ibm_resource_group "group" {
   name = "RG-dnovais"
 }
 
-resource ibm_is_instance "vsi1" {
-  name    = "${local.BASENAME}-vsi1"
-  resource_group = "${data.ibm_resource_group.group.id}"
-  vpc     = "${ibm_is_vpc.vpc.id}"
-  zone    = "${local.ZONE}"
-  keys    = ["${data.ibm_is_ssh_key.ssh_key_id.id}"]
-  image   = "${data.ibm_is_image.ubuntu.id}"
-  profile = "bc1-2x8"
-
-  primary_network_interface = {
-    subnet          = "${ibm_is_subnet.subnet1.id}"
-    security_groups = ["${ibm_is_security_group.sg1.id}"]
-  }
-}
-
 resource ibm_is_floating_ip "fip1" {
   name   = "${local.BASENAME}-fip1"
   target = "${ibm_is_instance.vsi1.primary_network_interface.0.id}"
