@@ -1,7 +1,7 @@
 variable "ssh_key" {}
 
 provider "ibm" {
-  generation = 1
+  generation = 2
   region = "us-south"
 }
 
