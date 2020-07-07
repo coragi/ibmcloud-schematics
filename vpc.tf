@@ -39,7 +39,7 @@ resource ibm_is_subnet "subnet1" {
 }
 
 data ibm_is_image "ubuntu" {
-  name = "centos-7.x-amd64"
+  name = "ubuntu-18-04-amd64"
 }
 
 data ibm_is_ssh_key "ssh_key_id" {
