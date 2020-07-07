@@ -56,7 +56,7 @@ resource ibm_is_instance "vsi1" {
   vpc     = "${ibm_is_vpc.vpc.id}"
   zone    = "${local.ZONE}"
   keys    = ["${data.ibm_is_ssh_key.ssh_key_id.id}"]
-  image   = "${data.ibm_is_image.ubuntu.id}"
+  image   = "${data.ibm_is_image.ubuntu.name}"
   profile = "cc1-2x4"
 
   primary_network_interface = {
