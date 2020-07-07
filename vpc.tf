@@ -11,7 +11,7 @@ locals {
 }
 
 resource ibm_is_vpc "vpc" {
-  name = "$${dnovais}-vpc"
+  name = "${locals.BASENAME}-vpc"
 }
 
 resource ibm_is_security_group "sg1" {
