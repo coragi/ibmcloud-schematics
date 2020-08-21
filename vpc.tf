@@ -6,12 +6,17 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "dnovais-schematics" 
+  BASENAME = "arcelor-schematics" 
   ZONE     = "us-south-1"
+}
+
+data ibm_resource_group "group" {
+  name = "RG-dnovais"
 }
 
 resource ibm_is_vpc "vpc" {
   name = "${local.BASENAME}-vpc"
+  resource_group = data.ibm_resource_group.group.id
 }
 
 resource ibm_is_security_group "sg1" {
@@ -44,10 +49,6 @@ data ibm_is_image "os" {
 
 data ibm_is_ssh_key "ssh_key_id" {
   name = "${var.ssh_key}"
-}
-
-data ibm_resource_group "group" {
-  name = "RG-dnovais"
 }
 
 resource ibm_is_instance "vsi1" {
