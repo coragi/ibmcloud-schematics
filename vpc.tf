@@ -10,13 +10,8 @@ locals {
   ZONE     = "us-south-1"
 }
 
-data ibm_resource_group "group" {
-  name = "RG-dnovais"
-}
-
 resource ibm_is_vpc "vpc" {
   name = "${local.BASENAME}-vpc"
-  resource_group = data.ibm_resource_group.group.id
 }
 
 resource ibm_is_security_group "sg1" {
@@ -45,6 +40,10 @@ resource ibm_is_subnet "subnet1" {
 
 data ibm_is_image "os" {
   name = "ibm-centos-7-6-minimal-amd64-1"
+}
+
+data ibm_resource_group "group" {
+  name = "RG-dnovais"
 }
 
 data ibm_is_ssh_key "ssh_key_id" {
