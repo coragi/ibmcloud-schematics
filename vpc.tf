@@ -6,7 +6,7 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "arcelor-schematics" 
+  BASENAME = "ibmcloud-schematics" 
   ZONE     = "us-south-1"
 }
 
