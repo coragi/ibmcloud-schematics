@@ -6,7 +6,7 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "ibmcloud-schematics" 
+  BASENAME = "ibmcloud-280920" 
   ZONE     = "us-south-1"
 }
 
