@@ -6,7 +6,7 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "ibmcloud-280920" 
+  BASENAME = "ibmcloud-161020" 
   ZONE     = "us-south-1"
 }
 
