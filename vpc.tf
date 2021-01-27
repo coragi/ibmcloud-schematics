@@ -6,7 +6,7 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "dnovais-ibmcloud" 
+  BASENAME = "dnovais-27jan21-ibmcloud" 
   ZONE     = "us-east-1"
 }
 
