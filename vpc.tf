@@ -2,12 +2,12 @@ variable "ssh_key" {}
 
 provider "ibm" {
   generation = 2
-  region = "us-south"
+  region = "us-east"
 }
 
 locals {
   BASENAME = "dnovais-ibmcloud" 
-  ZONE     = "us-south-1"
+  ZONE     = "us-east-1"
 }
 
 resource ibm_is_vpc "vpc" {
